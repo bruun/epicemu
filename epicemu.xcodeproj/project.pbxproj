@@ -11,6 +11,8 @@
 		1BC671DD133A3C3D00A5C6D9 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BC671DB133A3C3D00A5C6D9 /* MenuViewController.xib */; };
 		1BC671E2133A3C5C00A5C6D9 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC671E0133A3C5C00A5C6D9 /* GameViewController.m */; };
 		1BC671E3133A3C5C00A5C6D9 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BC671E1133A3C5C00A5C6D9 /* GameViewController.xib */; };
+		1BC671E5133A3F0C00A5C6D9 /* epicemu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC671E4133A3F0C00A5C6D9 /* epicemu_icon.png */; };
+		1BC671EC133A40FE00A5C6D9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC671EB133A40FE00A5C6D9 /* Default@2x.png */; };
 		E9AA23791339FDC400DF98C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AA23781339FDC400DF98C3 /* UIKit.framework */; };
 		E9AA237B1339FDC400DF98C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AA237A1339FDC400DF98C3 /* Foundation.framework */; };
 		E9AA237D1339FDC400DF98C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AA237C1339FDC400DF98C3 /* CoreGraphics.framework */; };
@@ -45,6 +47,8 @@
 		1BC671DF133A3C5B00A5C6D9 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		1BC671E0133A3C5C00A5C6D9 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		1BC671E1133A3C5C00A5C6D9 /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
+		1BC671E4133A3F0C00A5C6D9 /* epicemu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epicemu_icon.png; sourceTree = "<group>"; };
+		1BC671EB133A40FE00A5C6D9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		E9AA23741339FDC400DF98C3 /* epicemu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = epicemu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9AA23781339FDC400DF98C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E9AA237A1339FDC400DF98C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -91,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BC671E6133A3F3800A5C6D9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1BC671E4133A3F0C00A5C6D9 /* epicemu_icon.png */,
+				1BC671EB133A40FE00A5C6D9 /* Default@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		1BEF3561133A0837003722E2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +142,7 @@
 				E9AA239E1339FDC500DF98C3 /* epicemuTests */,
 				E9AA23771339FDC400DF98C3 /* Frameworks */,
 				E9AA23751339FDC400DF98C3 /* Products */,
+				1BC671E6133A3F3800A5C6D9 /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -270,6 +284,8 @@
 				E9AA23921339FDC500DF98C3 /* RootViewController.xib in Resources */,
 				1BC671DD133A3C3D00A5C6D9 /* MenuViewController.xib in Resources */,
 				1BC671E3133A3C5C00A5C6D9 /* GameViewController.xib in Resources */,
+				1BC671E5133A3F0C00A5C6D9 /* epicemu_icon.png in Resources */,
+				1BC671EC133A40FE00A5C6D9 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
