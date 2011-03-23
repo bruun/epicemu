@@ -81,6 +81,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BEF3561133A0837003722E2 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		1BEF3563133A084C003722E2 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				E9AA23901339FDC500DF98C3 /* epicemuViewController.xib */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		1BEF3564133A0854003722E2 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				E9AA238D1339FDC500DF98C3 /* epicemuViewController.h */,
+				E9AA238E1339FDC500DF98C3 /* epicemuViewController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
 		E9AA23691339FDC400DF98C3 = {
 			isa = PBXGroup;
 			children = (
@@ -113,12 +137,12 @@
 		E9AA237E1339FDC400DF98C3 /* epicemu */ = {
 			isa = PBXGroup;
 			children = (
+				1BEF3564133A0854003722E2 /* controller */,
+				1BEF3563133A084C003722E2 /* view */,
+				1BEF3561133A0837003722E2 /* model */,
 				E9AA23871339FDC500DF98C3 /* epicemuAppDelegate.h */,
 				E9AA23881339FDC500DF98C3 /* epicemuAppDelegate.m */,
 				E9AA238A1339FDC500DF98C3 /* MainWindow.xib */,
-				E9AA238D1339FDC500DF98C3 /* epicemuViewController.h */,
-				E9AA238E1339FDC500DF98C3 /* epicemuViewController.m */,
-				E9AA23901339FDC500DF98C3 /* epicemuViewController.xib */,
 				E9AA237F1339FDC400DF98C3 /* Supporting Files */,
 			);
 			path = epicemu;
@@ -446,6 +470,7 @@
 				E9AA23AD1339FDC500DF98C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E9AA23AE1339FDC500DF98C3 /* Build configuration list for PBXNativeTarget "epicemuTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +479,7 @@
 				E9AA23B01339FDC500DF98C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
