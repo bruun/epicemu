@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class epicemuViewController;
+@class RootViewController;
 
 @interface epicemuAppDelegate : NSObject <UIApplicationDelegate> {
 
@@ -16,6 +16,6 @@
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
-@property (nonatomic, retain) IBOutlet epicemuViewController *viewController;
+@property (nonatomic, retain) IBOutlet RootViewController *viewController;
 
 @end

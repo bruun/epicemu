@@ -8,7 +8,7 @@
 
 #import "epicemuAppDelegate.h"
 
-#import "epicemuViewController.h"
+#import "RootViewController.h"
 
 @implementation epicemuAppDelegate
 
