@@ -11,11 +11,27 @@
 
 @implementation GameViewController
 
+@synthesize level, levelView;
+
+/**
+ * For encapsulation purposes, use -init instead.
+ */
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    NSAssert(NO, @"Initialize with -init");
+    return nil;
+}
+
+- (id)init {
+    self = [super initWithNibName:@"GameView" bundle:nil];
     if (self) {
-        // Custom initialization
+        level = [[Level alloc] initWithHeight:levelView.bounds.size.height];
+        timer = [NSTimer scheduledTimerWithTimeInterval:5 
+                                                 target:level
+                                               selector:@selector(update:) 
+                                               userInfo:nil
+                                                repeats:YES];
+        NSLog(@"Weeee!");
     }
     return self;
 }
@@ -51,7 +67,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft);
 }
 
 @end

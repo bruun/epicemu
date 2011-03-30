@@ -8,16 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+#import "LevelView.h"
 
-@interface Level : UIView {
+@interface Level : NSObject {
 @private
-    UIBezierPath *path;
-    NSMutableArray *previousPoints;
+    // LevelView contains the actual drawing logic
+    LevelView *levelView;
+    NSMutableArray *controlPoints;
     unsigned int numberOfControlPoints;
+    
+    // For calculating y-coordinate of next control point
     int tick;
+    float height;
 }
 
-@property(nonatomic, retain) UIBezierPath *path;
+@property float height;
+
+- (id)initWithHeight:(float)height;
 
 - (void)update;
 - (void)setNumberOfControlPoints:(unsigned int)n;

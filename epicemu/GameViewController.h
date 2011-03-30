@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+#import "Level.h"
 
 @interface GameViewController : UIViewController {
+    Level *level;
+    IBOutlet LevelView *levelView;
     
+    NSTimer *timer;
 }
+
+@property(nonatomic, retain) Level *level;
+@property(nonatomic, retain) IBOutlet LevelView *levelView;
 
 @end
