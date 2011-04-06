@@ -11,18 +11,20 @@
 
 @implementation Level
 
-@synthesize height;
+@synthesize levelView;
 
-- (id)initWithHeight:(float)height {
+- (id)initWithLevelView:(LevelView *)lv {
     self = [super init];
     if (self) {
+        numberOfControlPoints = 50;
         controlPoints = [[NSMutableArray alloc] init];
-        self.height = 320;
+        self.levelView = lv;
     }
     return self;
 }
 
 - (void)update:(NSTimer *)timer {
+    
     // Remove excessive previous points
     while ([controlPoints count] >= numberOfControlPoints)
         [controlPoints removeObjectAtIndex:0];
@@ -39,18 +41,20 @@
     
     // Call for view to update
     [levelView drawWithPoints:controlPoints];
+    
 }
 
 /**
  * Calculates the next Y value to be used.
  */
 - (unsigned int)getNextY {
+    float height = self.levelView.bounds.size.height;
     float h = height / 4 - 20;
     
     int new = height;
     new -= (sin(tick * 20 / 90.0f) + 1) * h;
     new -= (sin(tick * 8 / 90.0f) + 1) * h;
-    // new -= arc4random() % (int)h / 5;
+    new -= arc4random() % (int)h / 5;
     
     new -= 20;
     
@@ -65,8 +69,8 @@
     int from = [controlPoints count] - degree;
     if (from < 0) from = 0;
     
+    // Perform the low-pass filtering
     int count = 1;
-    
     for (int i = from; i < [controlPoints count]; i++) {
         total += [[controlPoints objectAtIndex:i] unsignedIntValue];
         count++;

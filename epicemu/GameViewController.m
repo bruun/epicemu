@@ -25,13 +25,9 @@
 - (id)init {
     self = [super initWithNibName:@"GameView" bundle:nil];
     if (self) {
-        level = [[Level alloc] initWithHeight:levelView.bounds.size.height];
-        timer = [NSTimer scheduledTimerWithTimeInterval:5 
-                                                 target:level
-                                               selector:@selector(update:) 
-                                               userInfo:nil
-                                                repeats:YES];
-        NSLog(@"Weeee!");
+        levelView = [[LevelView alloc] initWithFrame:self.view.bounds];
+        level = [[Level alloc] initWithLevelView:self.levelView];
+        [self.view addSubview:levelView];
     }
     return self;
 }
@@ -54,7 +50,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    timer = [NSTimer scheduledTimerWithTimeInterval:1 / 25.0
+                                             target:self
+                                           selector:@selector(update:) 
+                                           userInfo:nil
+                                            repeats:YES];
+}
+
+- (void)update:(NSTimer *)sender {
+    [level update:sender];
 }
 
 - (void)viewDidUnload

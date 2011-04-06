@@ -8,16 +8,19 @@
 
 #import "LevelView.h"
 
-
 @implementation LevelView
 
-- (void)awakeFromNib {}
+- (id)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.opaque = NO;
+        self.backgroundColor = [UIColor clearColor];
+    }
+    return self;
+}
 
 - (void)drawWithPoints:(NSMutableArray *)newPoints {
     // Release existing points
-    [controlPoints release];
-    
-    [controlPoints retain];
     controlPoints = newPoints;
     
     // Call for view to update
@@ -26,8 +29,9 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    // Handy thing that may come in handy later
-    UIGraphicsGetCurrentContext();
+    // Get current drawing context and clear the screen
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextClearRect(ctx, rect);
     
     // Start the path
     UIBezierPath *path = [UIBezierPath bezierPath];
@@ -40,11 +44,32 @@
     [path moveToPoint:CGPointMake(0, height)];
     
     // Iterate over resolution, and draw lines between the points
+    unsigned int prev, next;
+    float dx = (float)width / ([controlPoints count] - 1);
     for (int i = 0; i < [controlPoints count]; i++) {
+        // Get current y and assume previous and next point the same (edge cases)
         unsigned int y = [[controlPoints objectAtIndex:i] unsignedIntValue];
-        CGPoint p = CGPointMake((float)i / ([controlPoints count] - 1) * width, y);
+        prev = next = y;
         
-        [path addLineToPoint:p];
+        // Get actual previous and next control points
+        if (i > 0)
+            prev = [[controlPoints objectAtIndex:i-1] unsignedIntValue];
+        if (i < [controlPoints count] - 1)
+            next = [[controlPoints objectAtIndex:i+1] unsignedIntValue];
+        
+        // Ascension rate
+        int a = next - prev;
+        
+        float x = i * dx;
+        
+        CGPoint p = CGPointMake(x, y);
+        CGPoint c1 = CGPointMake(x - dx / 3, y - a / 2);
+        CGPoint c2 = CGPointMake(x + dx / 3, y + a / 2);
+        
+        if (i > 0 && i < [controlPoints count] - 1)
+            [path addCurveToPoint:p controlPoint1:c1 controlPoint2:c2];
+        else
+            [path addLineToPoint:p];
     }
     
     // Finish the path

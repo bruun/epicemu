@@ -19,14 +19,13 @@
     
     // For calculating y-coordinate of next control point
     int tick;
-    float height;
 }
 
-@property float height;
+@property(nonatomic, retain) LevelView *levelView;
 
-- (id)initWithHeight:(float)height;
+- (id)initWithLevelView:(LevelView *)levelView;
 
-- (void)update;
+- (void)update:(NSTimer *)timer;
 - (void)setNumberOfControlPoints:(unsigned int)n;
 - (unsigned int)getNextY;
 

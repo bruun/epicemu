@@ -12,12 +12,14 @@
 
 @interface GameViewController : UIViewController {
     Level *level;
-    IBOutlet LevelView *levelView;
+    LevelView *levelView;
     
     NSTimer *timer;
 }
 
 @property(nonatomic, retain) Level *level;
-@property(nonatomic, retain) IBOutlet LevelView *levelView;
+@property(nonatomic, retain) LevelView *levelView;
+
+- (void)update:(NSTimer *)sender;
 
 @end
