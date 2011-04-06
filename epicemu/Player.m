@@ -8,7 +8,7 @@
 
 #import "Player.h"
 
-const double G = 9.81 * 10;
+const double G = 9.81 * 100;
 
 @implementation Player
 
@@ -64,8 +64,9 @@ const double G = 9.81 * 10;
 }
 
 - (void)jump {
-    if ([self isOnGround])
-        velocity = -G;
+    if ([self isOnGround]) {
+        velocity = -G / 3;
+    }
 }
 
 - (void)attack {
