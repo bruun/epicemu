@@ -9,10 +9,14 @@
 #import <UIKit/UIKit.h>
 
 #import "Level.h"
+#import "Player.h"
 
-@interface GameViewController : UIViewController {
+@interface GameViewController : UIViewController <UIGestureRecognizerDelegate> {
     Level *level;
     LevelView *levelView;
+    
+    IBOutlet PlayerView *playerView;
+    Player *player;
     
     NSTimer *timer;
 }
@@ -20,6 +24,10 @@
 @property(nonatomic, retain) Level *level;
 @property(nonatomic, retain) LevelView *levelView;
 
-- (void)update:(NSTimer *)sender;
+@property(nonatomic, retain) Player *player;
+@property(nonatomic, retain) PlayerView *playerView;
+
+- (void)tick:(NSTimer *)sender;
+- (void)jump:(UIGestureRecognizer *)gesture;
 
 @end

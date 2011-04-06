@@ -10,6 +10,8 @@
 
 @implementation LevelView
 
+@synthesize path = _path;
+
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
@@ -34,7 +36,8 @@
     CGContextClearRect(ctx, rect);
     
     // Start the path
-    UIBezierPath *path = [UIBezierPath bezierPath];
+    self.path = [UIBezierPath bezierPath];
+    UIBezierPath *path = self.path;
     
     // Width of drawable area
     unsigned int width = self.frame.size.width;

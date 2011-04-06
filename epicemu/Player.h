@@ -2,16 +2,41 @@
 //  Player.h
 //  epicemu
 //
-//  Created by Jonas Myrlund on 30.03.11.
+//  Created by Jonas Myrlund on 06.04.11.
 //  Copyright 2011 Private. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
+#import "PlayerView.h"
 
-@interface Player : UIView {
-@private
+@interface Player : NSObject {
+    PlayerView *playerView;
     
+    float velocity;
+    float lowPassVelocity;
+    BOOL followGround;
+    
+    BOOL isAttacking;
+    float timeSpentAttacking;
+    float _lengthOfAttacks;
+    
+    int _state;
 }
+
+@property(nonatomic, retain) PlayerView *playerView;
+@property(nonatomic) float lengthOfAttacks;
+@property(nonatomic) int state;
+
+- (id)initWithPlayerView:(PlayerView *)playerView;
+- (void)move:(NSTimer *)sender;
+- (void)bumpDistance:(float)distance withTimer:(NSTimer *)timer;
+- (void)flew;
+
+- (BOOL)isOnGround;
+
+- (void)jump;
+- (void)attack;
+- (void)endAttack;
 
 @end

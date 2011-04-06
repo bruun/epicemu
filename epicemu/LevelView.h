@@ -12,7 +12,10 @@
 @interface LevelView : UIView {
 @private
     NSMutableArray *controlPoints;
+    UIBezierPath *_path;
 }
+
+@property(nonatomic, retain) UIBezierPath *path;
 
 - (void)drawWithPoints:(NSMutableArray *)newPoints;
 
