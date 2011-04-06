@@ -56,7 +56,7 @@
     new -= (sin(tick * 8 / 90.0f) + 1) * h;
     new -= arc4random() % (int)h / 5;
     
-    new -= 20;
+    new += 50;
     
     if ([controlPoints count] == 0)
         return new;
