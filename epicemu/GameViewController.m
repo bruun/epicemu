@@ -11,7 +11,7 @@
 @implementation GameViewController
 
 @synthesize level, levelView;
-@synthesize player, playerView;
+@synthesize player, playerView, root;
 
 /**
  * For encapsulation purposes, use -init instead.

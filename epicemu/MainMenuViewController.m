@@ -82,6 +82,9 @@
             interfaceOrientation == UIInterfaceOrientationLandscapeLeft);
 }
 
+
+#pragma mark Relevant methods #pragma -
+
 - (IBAction)touchDown:(id)sender {
     [self hideViews];
     [self makeLevelButtons];
