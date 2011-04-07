@@ -48,16 +48,21 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationLandscapeRight ||
-            interfaceOrientation == UIInterfaceOrientationLandscapeRight);
+    NSLog(@"Autorotate");
+    return [self.currentController shouldAutorotateToInterfaceOrientation:interfaceOrientation];
 }
 
 - (void) switchToGameViewWithLevel:(int)level
 {
+    self.wantsFullScreenLayout = true;
+    
     NSLog(@"Switching!");
     [self.currentController release];
     self.currentController = [[GameViewController alloc] init];
-    self.view = self.currentController.view;
+
+    [self.view addSubview:self.currentController.view];
+    
+    
 }
 
 @end

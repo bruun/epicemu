@@ -10,6 +10,7 @@
 		1B2FE2AB134DB02E0045D08A /* LevelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2FE2A7134DB02E0045D08A /* LevelButton.m */; };
 		1B2FE2AC134DB02E0045D08A /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2FE2A9134DB02E0045D08A /* MainMenuViewController.m */; };
 		1B2FE2AD134DB02E0045D08A /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B2FE2AA134DB02E0045D08A /* MainMenuViewController.xib */; };
+		1B2FE2B0134DB9A40045D08A /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2FE2AF134DB9A40045D08A /* PlayerView.m */; };
 		1BC671E2133A3C5C00A5C6D9 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC671E0133A3C5C00A5C6D9 /* GameViewController.m */; };
 		1BC671E3133A3C5C00A5C6D9 /* GameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BC671E1133A3C5C00A5C6D9 /* GameView.xib */; };
 		1BC671E5133A3F0C00A5C6D9 /* epicemu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC671E4133A3F0C00A5C6D9 /* epicemu_icon.png */; };
@@ -50,6 +51,8 @@
 		1B2FE2A8134DB02E0045D08A /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		1B2FE2A9134DB02E0045D08A /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		1B2FE2AA134DB02E0045D08A /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
+		1B2FE2AE134DB9A40045D08A /* PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerView.h; sourceTree = "<group>"; };
+		1B2FE2AF134DB9A40045D08A /* PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerView.m; sourceTree = "<group>"; };
 		1BC671DF133A3C5B00A5C6D9 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		1BC671E0133A3C5C00A5C6D9 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		1BC671E1133A3C5C00A5C6D9 /* GameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameView.xib; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				DD5C21DB134364A000B81887 /* LevelView.m */,
 				1B2FE2A6134DB02E0045D08A /* LevelButton.h */,
 				1B2FE2A7134DB02E0045D08A /* LevelButton.m */,
+				1B2FE2AE134DB9A40045D08A /* PlayerView.h */,
+				1B2FE2AF134DB9A40045D08A /* PlayerView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -350,6 +355,7 @@
 				DD5C21DC134364A000B81887 /* LevelView.m in Sources */,
 				1B2FE2AB134DB02E0045D08A /* LevelButton.m in Sources */,
 				1B2FE2AC134DB02E0045D08A /* MainMenuViewController.m in Sources */,
+				1B2FE2B0134DB9A40045D08A /* PlayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
