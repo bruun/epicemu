@@ -7,8 +7,11 @@
 //
 
 #import "RootViewController.h"
+#import "MainMenuViewController.h"
+#import "GameViewController.h"
 
 @implementation RootViewController
+@synthesize currentController;
 
 - (void)dealloc
 {
@@ -29,6 +32,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"Hai!");
+    
+    self.currentController = [[MainMenuViewController alloc] initWithRoot:self];
+    self.view = self.currentController.view;
 }
 
 - (void)viewDidUnload
@@ -41,7 +48,16 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return (interfaceOrientation == UIInterfaceOrientationLandscapeRight ||
+            interfaceOrientation == UIInterfaceOrientationLandscapeRight);
+}
+
+- (void) switchToGameViewWithLevel:(int)level
+{
+    NSLog(@"Switching!");
+    [self.currentController release];
+    self.currentController = [[GameViewController alloc] init];
+    self.view = self.currentController.view;
 }
 
 @end
