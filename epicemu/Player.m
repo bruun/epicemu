@@ -48,8 +48,10 @@ const double G = 9.81 * 100;
     }
     
     [playerView performSelectorOnMainThread:@selector(setNeedsDisplay) withObject:nil waitUntilDone:NO];
+    if (!isAttacking && [self isOnGround]) {
+        score++;
+    }
     
-    score++;
 }
 
 - (BOOL)isOnGround {

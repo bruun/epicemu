@@ -150,7 +150,7 @@
     
     // Update score
     [scoreLabel performSelectorOnMainThread:@selector(setText : ) withObject:[NSString stringWithFormat:@"%d", player.score]waitUntilDone:YES];
-    
+
     if (player.score > [[level.settings valueForKey:@"ScoreToBeat"] intValue] 
         && [[NSUserDefaults standardUserDefaults] integerForKey:@"unlockedUpToLevel"] != level.levelNumber+1) {
         
