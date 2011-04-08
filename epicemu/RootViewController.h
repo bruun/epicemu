@@ -10,6 +10,7 @@
 
 @interface RootViewController : UIViewController {
     UIViewController *currentController;
+
 }
 
 @property(nonatomic, retain) UIViewController *currentController;

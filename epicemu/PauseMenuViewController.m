@@ -11,7 +11,7 @@
 
 @implementation PauseMenuViewController
 
-@synthesize resumeButton, retryButton, mainMenuButton, root;
+@synthesize resumeButton, retryButton, mainMenuButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

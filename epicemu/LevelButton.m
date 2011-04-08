@@ -10,43 +10,32 @@
 
 
 @implementation LevelButton
-@synthesize level, locked, root;
+@synthesize level, locked;
 
--(id) initWithValue:(int) value andRoot:(RootViewController *)root
+-(id) initWithValue:(int) value
 {
     self = [super init];
     int unlockedUpToLevel = [[NSUserDefaults standardUserDefaults] boolForKey:@"unlockedUpToLevel"];
     
     if (self) {
         self.level = value;
-        self.locked = true;
-        self.root = root;
+
         
         if (value <= unlockedUpToLevel) {
-            self.locked = false;
+            self.enabled = NO;
         }
         
-        [self setTextAlignment:UITextAlignmentCenter];
-        [self setFont:[UIFont fontWithName:@"Georgia" size:18]];
-        [self setText:[NSString stringWithFormat:@"%d", value]];
-        [self setUserInteractionEnabled:true];
+
+        [self.titleLabel setFont:[UIFont fontWithName:@"Georgia" size:18]];
+        [self setTitle:[NSString stringWithFormat:@"%d", value] forState:UIControlStateNormal];
+        [self setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
+
         
-        if (!self.locked) {
-            [self setBackgroundColor:[UIColor greenColor]];
-        }
-        else {
-            [self setBackgroundColor:[UIColor lightGrayColor]];
-        }
+        
     }
     
     return self;
 }
 
--(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    if (!self.locked) {
-        [self.root switchToGameViewWithLevel:self.level];
-    }
-}
 
 @end

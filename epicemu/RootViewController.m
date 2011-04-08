@@ -35,8 +35,11 @@
     [super viewDidLoad];
     NSLog(@"Hai!");
     
-    self.currentController = [[MainMenuViewController alloc] initWithRoot:self];
-    self.view = self.currentController.view;
+    self.currentController = [[MainMenuViewController alloc] init];
+    [self.view addSubview:self.currentController.view];
+
+    [self.view bringSubviewToFront:self.currentController.view];
+
 }
 
 - (void)viewDidUnload

@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Level.h"
-#import "RootViewController.h"
+#import "PauseMenuViewController.h"
 
 @interface PauseMenuViewController : UIViewController <UIGestureRecognizerDelegate> {
 @private
-    RootViewController *root;
     IBOutlet UIButton *resumeButton;
     IBOutlet UIButton *retryButton;
     IBOutlet UIButton *mainMenuButton;
@@ -23,7 +22,7 @@
 - (IBAction)retryLevel:(id)sender;
 - (IBAction)gotoMainMenu:(id)sender;
 
-@property(retain,nonatomic) RootViewController *root;
+
 @property (nonatomic, retain) IBOutlet UIButton *resumeButton;
 @property (nonatomic, retain) IBOutlet UIButton *retryButton;
 @property (nonatomic, retain) IBOutlet UIButton *mainMenuButton;

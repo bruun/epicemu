@@ -10,14 +10,15 @@
 
 #import "Level.h"
 #import "Player.h"
-#import "RootViewController.h"
+#import "PauseMenuViewController.h"
 
 #define FPS         25
 #define SKIP_TICKS  1000 / FPS
 
 @interface GameViewController : UIViewController <UIGestureRecognizerDelegate> {
     
-    RootViewController *root;
+    
+    PauseMenuViewController *pauseMenu;
     Level *level;
     LevelView *levelView;
     
@@ -28,7 +29,7 @@
     BOOL _running;
 }
 
-@property(retain,nonatomic) RootViewController *root;
+@property(retain,nonatomic) PauseMenuViewController *pauseMenu;
 @property(nonatomic, retain) Level *level;
 @property(nonatomic, retain) LevelView *levelView;
 

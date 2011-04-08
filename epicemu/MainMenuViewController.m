@@ -8,7 +8,7 @@
 
 #import "MainMenuViewController.h"
 #import "RootViewController.h"
-#import "LevelButton.h";
+#import "LevelButton.h"
 
 #define kLevelCount 10
 #define kLevelsPerRow 5
@@ -17,17 +17,18 @@
 #define kLevelButtonHeight 60
 
 @implementation MainMenuViewController
-@synthesize logo, playText, playButton, root, state;
+@synthesize logo, playText, playButton, state;
 
-- (id)initWithRoot:(RootViewController*) root
+- (id)init
 {
+    
     self = [super init];
     
     if (self) {
-        self.root = root;
         self.state = kViewStateFrontMenu;
-    }
 
+    }
+    
     return self;
 }
 
@@ -88,7 +89,7 @@
 - (IBAction)touchDown:(id)sender {
     [self hideViews];
     [self makeLevelButtons];
-    self.state = kViewStateLevelMenu;
+    //self.state = kViewStateLevelMenu;
 }
 
 - (void) hideViews
@@ -108,7 +109,8 @@
     for (int i = 1; i <= kLevelCount; i++) {
         
         // Make tha button, give it a position, and add it
-        LevelButton *button = [[LevelButton alloc] initWithValue:i andRoot:self.root];
+        LevelButton *button = [[LevelButton alloc] initWithValue:i];
+        [button addTarget:self action:@selector(loadLevel) forControlEvents:UIControlEventAllEvents];
         [button setFrame:CGRectMake(x, y, kLevelButtonWidth, kLevelButtonHeight)];
         [self.view addSubview:button];
         
@@ -120,6 +122,12 @@
             y = y + kLevelButtonHeight + 15;
         }
     }
+}
+
+- (void) loadLevel:(id)sender
+{
+    LevelButton *button = (LevelButton*)sender;
+    [(RootViewController *)[self parentViewController] switchToGameViewWithLevel:button.level];
 }
 
 @end
