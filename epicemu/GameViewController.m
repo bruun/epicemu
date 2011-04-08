@@ -205,10 +205,11 @@
     [scoreLabel performSelectorOnMainThread:@selector(setText : ) withObject:[NSString stringWithFormat:@"%d", player.score]waitUntilDone:YES];
 
     if (player.score > [[level.settings valueForKey:@"ScoreToBeat"] intValue] 
-        && [[NSUserDefaults standardUserDefaults] integerForKey:@"unlockedUpToLevel"] != level.levelNumber+1) {
+        && [[NSUserDefaults standardUserDefaults] integerForKey:@"unlockedUpToLevel"] < level.levelNumber+1) {
         
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:level.levelNumber+1]
                                                   forKey:@"unlockedUpToLevel"];
+
         [scoreLabel performSelectorOnMainThread:@selector(setHidden : ) withObject:false waitUntilDone:YES];
         
     }
