@@ -10,10 +10,13 @@
 
 @interface RootViewController : UIViewController {
     UIViewController *currentController;
+
 }
 
 - (void) switchToGameViewWithLevel:(int)level;
-- (void) switchToPauseMenuWithLevel:(int)level;
+- (void) switchToPauseMenuViewWithLevel:(int)level;
+
+
 @property(nonatomic, retain) UIViewController *currentController;
 
 @end

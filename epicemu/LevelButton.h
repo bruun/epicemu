@@ -9,17 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "RootViewController.h"
 
-@interface LevelButton : UILabel {
+@interface LevelButton : UIButton {
     int level;
     bool locked;
     
-    RootViewController *root;
+
 }
 
--(id) initWithValue: (int)value andRoot:(RootViewController *)root;
+-(id) initWithValue: (int)value;
 
 @property(nonatomic) int level;
 @property(nonatomic) bool locked;
-@property(nonatomic, retain) RootViewController *root;
 
 @end

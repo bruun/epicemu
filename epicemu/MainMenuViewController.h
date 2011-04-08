@@ -15,7 +15,7 @@ typedef enum {
 } ViewState;
 
 @interface MainMenuViewController : UIViewController {
-    RootViewController *root;
+
     ViewState *state;
     UIImageView *logo;
     UIButton *playButton;
@@ -23,13 +23,13 @@ typedef enum {
 }
 
 
+- (IBAction)loadLevel:(id)sender;
 - (IBAction)touchDown:(id)sender;
-- (id) initWithRoot:(RootViewController *)root;
 
 - (void) hideViews;
 - (void) makeLevelButtons;
 
-@property(retain,nonatomic) RootViewController *root;
+
 @property(nonatomic) ViewState *state;
 @property (nonatomic, retain) IBOutlet UIImageView *logo;
 @property (nonatomic, retain) IBOutlet UIButton *playButton;

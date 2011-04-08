@@ -10,11 +10,12 @@
 
 #import "Level.h"
 #import "Player.h"
-#import "RootViewController.h"
+#import "PauseMenuViewController.h"
 
 @interface GameViewController : UIViewController <UIGestureRecognizerDelegate> {
     
-    RootViewController *root;
+    
+    PauseMenuViewController *pauseMenu;
     Level *level;
     LevelView *levelView;
     
@@ -24,7 +25,7 @@
     NSTimer *timer;
 }
 
-@property(retain,nonatomic) RootViewController *root;
+@property(retain,nonatomic) PauseMenuViewController *pauseMenu;
 @property(nonatomic, retain) Level *level;
 @property(nonatomic, retain) LevelView *levelView;
 
@@ -33,5 +34,6 @@
 
 - (void)tick:(NSTimer *)sender;
 - (void)jump:(UIGestureRecognizer *)gesture;
+
 
 @end

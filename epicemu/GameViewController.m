@@ -10,8 +10,7 @@
 
 @implementation GameViewController
 
-@synthesize level, levelView;
-@synthesize player, playerView, root;
+@synthesize level, levelView, player, playerView, pauseMenu;
 
 /**
  * For encapsulation purposes, use -init instead.
@@ -33,6 +32,7 @@
         // Make a player
         player = [[Player alloc] initWithPlayerView:playerView];
     }
+
     return self;
 }
 
