@@ -43,8 +43,7 @@
         self.currentController = [[MainMenuViewController alloc] init];
     
     self.view = self.currentController.view;
-    
-    [self.currentController release];
+    [self.currentController setParentViewController:self]; // Ugly hack, but made it work!
 }
 
 - (void)viewDidUnload
@@ -52,6 +51,7 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    [self.currentController release];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -67,7 +67,7 @@
     
     NSLog(@"Switching to game view!");
     [self.currentController release];
-    self.currentController = [[GameViewController alloc] init];
+    self.currentController = [[GameViewController alloc] initLevel:level];
 
     [self.view addSubview:self.currentController.view];
     

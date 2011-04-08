@@ -13,6 +13,8 @@
 @interface Player : NSObject {
     PlayerView *playerView;
     
+    int score;
+    
     float velocity;
     float lowPassVelocity;
     BOOL followGround;
@@ -27,6 +29,7 @@
 @property(nonatomic, retain) PlayerView *playerView;
 @property(nonatomic) float lengthOfAttacks;
 @property(nonatomic) int state;
+@property(nonatomic) int score;
 
 - (id)initWithPlayerView:(PlayerView *)playerView;
 - (void)move:(NSTimeInterval)timeInterval;

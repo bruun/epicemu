@@ -21,13 +21,10 @@
 
 - (id)init
 {
-    
     self = [super init];
     
     if (self) {
         self.state = kViewStateFrontMenu;
-
-
     }
     
     return self;
@@ -130,7 +127,8 @@
 {
     NSLog(@"Starting level...");
     LevelButton *button = (LevelButton*)sender;
-    [(RootViewController *)[self parentViewController] switchToGameViewWithLevel:button.level];
+    RootViewController *root = (RootViewController *)[self parentViewController];
+    [root switchToGameViewWithLevel:button.level];
 
 
 }

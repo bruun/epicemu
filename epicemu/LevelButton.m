@@ -23,7 +23,6 @@
         
         [self.titleLabel setFont:[UIFont fontWithName:@"Georgia" size:18]];
         [self setTitle:[NSString stringWithFormat:@"%d", value] forState:UIControlStateNormal];
-        [self setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
         
         [self setTitleColor:[UIColor redColor] forState:UIControlStateDisabled];
         [self setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];

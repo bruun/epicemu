@@ -19,11 +19,15 @@
     
     // For calculating y-coordinate of next control point
     int tick;
+    
+    // Settings holds level settings
+    NSMutableDictionary *settings;
 }
 
 @property(nonatomic, retain) LevelView *levelView;
+@property(nonatomic, retain) NSMutableDictionary *settings;
 
-- (id)initWithLevelView:(LevelView *)levelView;
+- (id)initLevel:(int)levelNumber withLevelView:(LevelView *)levelView;
 
 - (void)update:(NSTimeInterval)timeInterval;
 - (void)setNumberOfControlPoints:(unsigned int)n;

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DistanceToNextEnemyMin</key>
+	<integer>300</integer>
+	<key>DistanceToNextEnemyMax</key>
+	<integer>600</integer>
+	<key>ScoreToBeat</key>
+	<integer>3000</integer>
+	<key>ScoreMultiplier</key>
+	<integer>1</integer>
+	<key>GroundColor</key>
+	<array>
+		<real>0.3</real>
+		<real>0.3</real>
+		<real>0.3</real>
+	</array>
+	<key>Gravity</key>
+	<real>9.81</real>
+	<key>Stickyness</key>
+	<integer>1</integer>
+	<key>EnemyTypes</key>
+	<array>
+		<integer>3</integer>
+		<integer>4</integer>
+		<integer>5</integer>
+	</array>
+	<key>Name</key>
+	<string>Green day</string>
+</dict>
+</plist>

@@ -12,7 +12,7 @@ const double G = 9.81 * 100;
 
 @implementation Player
 
-@synthesize playerView;
+@synthesize playerView, score;
 @synthesize lengthOfAttacks = _lengthOfAttacks;
 @synthesize state = _state;
 
@@ -21,6 +21,7 @@ const double G = 9.81 * 100;
     if (self) {
         self.playerView = p;
         
+        score = 0;
         velocity = 0.0;
         followGround = YES;
         isAttacking = NO;
@@ -47,6 +48,8 @@ const double G = 9.81 * 100;
     }
     
     [playerView performSelectorOnMainThread:@selector(setNeedsDisplay) withObject:nil waitUntilDone:NO];
+    
+    score++;
 }
 
 - (BOOL)isOnGround {

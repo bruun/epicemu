@@ -24,10 +24,13 @@
     
     IBOutlet PlayerView *playerView;
     Player *player;
+    UILabel *scoreLabel;
     
     float nextTick;
     BOOL _running;
 }
+
+
 
 @property(retain,nonatomic) PauseMenuViewController *pauseMenu;
 @property(nonatomic, retain) Level *level;
@@ -35,7 +38,9 @@
 
 @property(nonatomic, retain) Player *player;
 @property(nonatomic, retain) PlayerView *playerView;
+@property(nonatomic, retain) IBOutlet UILabel *scoreLabel;
 
+- (id)initLevel:(int)levelNumber;
 - (void)tick:(NSTimeInterval)timeInterval;
 - (void)action:(UIGestureRecognizer *)gesture;
 

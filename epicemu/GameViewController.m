@@ -12,7 +12,7 @@
 
 @implementation GameViewController
 
-@synthesize level, levelView, player, playerView, pauseMenu;
+@synthesize level, levelView, player, playerView, pauseMenu, scoreLabel;
 
 /**
  * For encapsulation purposes, use -init instead.
@@ -23,17 +23,18 @@
     return nil;
 }
 
-- (id)init {
+- (id)initLevel:(int) levelNumber {
     self = [super initWithNibName:@"GameView" bundle:nil];
     
     if (self) {
         // Maek fix level
         levelView = [[LevelView alloc] initWithFrame:self.view.bounds];
-        level = [[Level alloc] initWithLevelView:self.levelView];
+        level = [[Level alloc] initLevel:levelNumber withLevelView:self.levelView];
         [self.view addSubview:levelView];
         
         // Make a player
         player = [[Player alloc] initWithPlayerView:playerView];
+        [self.view addSubview:scoreLabel];
     }
 
     return self;
@@ -41,6 +42,7 @@
 
 - (void)dealloc
 {
+    [scoreLabel release];
     [super dealloc];
 }
 
@@ -64,7 +66,7 @@
     NSTimeInterval time, lastTime = [self currentTime];
     NSTimeInterval timeInterval;
     
-    int fps = 15;
+    int fps = 25;
     
     while (_running) {
         while (CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0.002, YES) == kCFRunLoopRunHandledSource);
@@ -143,10 +145,15 @@
         [player bumpDistance:distance withTimeInterval:timeInterval];
     else
         [player flew];
+    
+    // Update score
+    scoreLabel.text = [NSString stringWithFormat:@"%d", player.score];
 }
 
 - (void)viewDidUnload
 {
+    [scoreLabel release];
+    scoreLabel = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

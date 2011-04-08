@@ -11,14 +11,20 @@
 
 @implementation Level
 
-@synthesize levelView;
+@synthesize levelView, settings;
 
-- (id)initWithLevelView:(LevelView *)lv {
+- (id)initLevel:(int)levelNumber withLevelView:(LevelView *)lv {
     self = [super init];
     if (self) {
         numberOfControlPoints = 50;
         controlPoints = [[NSMutableArray alloc] init];
         self.levelView = lv;
+        
+        NSString *levelFile = [NSString stringWithFormat:@"level%d.plist", levelNumber];
+        levelFile = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:levelFile]; //Abspath
+        self.settings = [[NSMutableDictionary alloc] initWithContentsOfFile:levelFile];
+        
+        NSLog(@"%d", [[self.settings valueForKey:@"ScoreToBeat"] intValue]);
     }
     return self;
 }

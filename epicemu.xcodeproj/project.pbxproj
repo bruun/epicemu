@@ -10,6 +10,7 @@
 		1B2FE2AB134DB02E0045D08A /* LevelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2FE2A7134DB02E0045D08A /* LevelButton.m */; };
 		1B2FE2AC134DB02E0045D08A /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2FE2A9134DB02E0045D08A /* MainMenuViewController.m */; };
 		1B2FE2AD134DB02E0045D08A /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B2FE2AA134DB02E0045D08A /* MainMenuViewController.xib */; };
+		1BBD5504134F3C3C0044D5EA /* level1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BBD5503134F3C3C0044D5EA /* level1.plist */; };
 		1BC671E2133A3C5C00A5C6D9 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC671E0133A3C5C00A5C6D9 /* GameViewController.m */; };
 		1BC671E3133A3C5C00A5C6D9 /* GameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BC671E1133A3C5C00A5C6D9 /* GameView.xib */; };
 		1BC671E5133A3F0C00A5C6D9 /* epicemu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC671E4133A3F0C00A5C6D9 /* epicemu_icon.png */; };
@@ -53,6 +54,7 @@
 		1B2FE2A8134DB02E0045D08A /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		1B2FE2A9134DB02E0045D08A /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		1B2FE2AA134DB02E0045D08A /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
+		1BBD5503134F3C3C0044D5EA /* level1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = level1.plist; path = levels/level1.plist; sourceTree = "<group>"; };
 		1BC671DF133A3C5B00A5C6D9 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		1BC671E0133A3C5C00A5C6D9 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		1BC671E1133A3C5C00A5C6D9 /* GameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameView.xib; sourceTree = "<group>"; };
@@ -115,9 +117,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BBD5501134F3C140044D5EA /* levels */ = {
+			isa = PBXGroup;
+			children = (
+				1BBD5503134F3C3C0044D5EA /* level1.plist */,
+			);
+			name = levels;
+			sourceTree = "<group>";
+		};
 		1BC671E6133A3F3800A5C6D9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1BBD5501134F3C140044D5EA /* levels */,
 				1BC671E4133A3F0C00A5C6D9 /* epicemu_icon.png */,
 				1BC671EB133A40FE00A5C6D9 /* Default@2x.png */,
 			);
@@ -320,6 +331,7 @@
 				1BC671EC133A40FE00A5C6D9 /* Default@2x.png in Resources */,
 				1B2FE2AD134DB02E0045D08A /* MainMenuViewController.xib in Resources */,
 				DDDDF633134E972900FFA02B /* PauseMenuViewController.xib in Resources */,
+				1BBD5504134F3C3C0044D5EA /* level1.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
