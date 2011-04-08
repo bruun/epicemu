@@ -11,6 +11,9 @@
 #import "Level.h"
 #import "Player.h"
 
+#define FPS         25
+#define SKIP_TICKS  1000 / FPS
+
 @interface GameViewController : UIViewController <UIGestureRecognizerDelegate> {
     Level *level;
     LevelView *levelView;
@@ -18,7 +21,8 @@
     IBOutlet PlayerView *playerView;
     Player *player;
     
-    NSTimer *timer;
+    float nextTick;
+    BOOL _running;
 }
 
 @property(nonatomic, retain) Level *level;
@@ -27,7 +31,9 @@
 @property(nonatomic, retain) Player *player;
 @property(nonatomic, retain) PlayerView *playerView;
 
-- (void)tick:(NSTimer *)sender;
+- (void)tick;
 - (void)jump:(UIGestureRecognizer *)gesture;
+
+- (int)currentTime;
 
 @end

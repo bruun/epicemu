@@ -19,6 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    if (true) // Debug-hook for Jonas
+        [self setViewController:[[GameViewController alloc] init]];
+    else
+        [self setViewController:[[RootViewController alloc] init]];
+    
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
