@@ -27,6 +27,7 @@
     if (self) {
         self.state = kViewStateFrontMenu;
 
+
     }
     
     return self;
@@ -87,6 +88,7 @@
 #pragma mark Relevant methods #pragma -
 
 - (IBAction)touchDown:(id)sender {
+    NSLog(@"Pressed play!");
     [self hideViews];
     [self makeLevelButtons];
     //self.state = kViewStateLevelMenu;
@@ -129,6 +131,8 @@
     NSLog(@"Starting level...");
     LevelButton *button = (LevelButton*)sender;
     [(RootViewController *)[self parentViewController] switchToGameViewWithLevel:button.level];
+
+
 }
 
 @end

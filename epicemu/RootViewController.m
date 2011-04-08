@@ -11,7 +11,8 @@
 #import "GameViewController.h"
 #import "PauseMenuViewController.h"
 
-#define kTestingGameView    YES
+// The following switch autoloads GameViewController directly
+#define kTestingGameView    NO
 
 @implementation RootViewController
 @synthesize currentController;
