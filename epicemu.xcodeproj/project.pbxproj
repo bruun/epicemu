@@ -17,10 +17,9 @@
 		DD5C21DC134364A000B81887 /* LevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5C21DB134364A000B81887 /* LevelView.m */; };
 		DDC0D66A134343CE0075D5D3 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC0D669134343CE0075D5D3 /* Level.m */; };
 		DDC3009A134C7D9A00304B8F /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC30099134C7D9A00304B8F /* Player.m */; };
-		DDDDF62E134E96DD00FFA02B /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDDF62D134E96DD00FFA02B /* PlayerView.m */; };
+		DDD81C4B134E9963001E4488 /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD81C4A134E9963001E4488 /* PlayerView.m */; };
 		DDDDF631134E971E00FFA02B /* PauseMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDDF630134E971E00FFA02B /* PauseMenuViewController.m */; };
 		DDDDF633134E972900FFA02B /* PauseMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDDDF632134E972900FFA02B /* PauseMenuViewController.xib */; };
-		DDE3482913435C5400A30F7D /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE3482813435C5400A30F7D /* PlayerView.m */; };
 		E9AA23791339FDC400DF98C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AA23781339FDC400DF98C3 /* UIKit.framework */; };
 		E9AA237B1339FDC400DF98C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AA237A1339FDC400DF98C3 /* Foundation.framework */; };
 		E9AA237D1339FDC400DF98C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AA237C1339FDC400DF98C3 /* CoreGraphics.framework */; };
@@ -65,12 +64,11 @@
 		DDC0D669134343CE0075D5D3 /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
 		DDC30098134C7D9A00304B8F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		DDC30099134C7D9A00304B8F /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
-		DDDDF62C134E96DD00FFA02B /* PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerView.h; sourceTree = "<group>"; };
-		DDDDF62D134E96DD00FFA02B /* PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerView.m; sourceTree = "<group>"; };
+		DDD81C49134E9963001E4488 /* PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerView.h; sourceTree = "<group>"; };
+		DDD81C4A134E9963001E4488 /* PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerView.m; sourceTree = "<group>"; };
 		DDDDF62F134E971E00FFA02B /* PauseMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseMenuViewController.h; sourceTree = "<group>"; };
 		DDDDF630134E971E00FFA02B /* PauseMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PauseMenuViewController.m; sourceTree = "<group>"; };
 		DDDDF632134E972900FFA02B /* PauseMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PauseMenuViewController.xib; sourceTree = "<group>"; };
-		DDE3482813435C5400A30F7D /* PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerView.m; sourceTree = "<group>"; };
 		E9AA23741339FDC400DF98C3 /* epicemu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = epicemu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9AA23781339FDC400DF98C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E9AA237A1339FDC400DF98C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -140,9 +138,9 @@
 		1BEF3563133A084C003722E2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DDD81C49134E9963001E4488 /* PlayerView.h */,
+				DDD81C4A134E9963001E4488 /* PlayerView.m */,
 				DDDDF632134E972900FFA02B /* PauseMenuViewController.xib */,
-				DDDDF62C134E96DD00FFA02B /* PlayerView.h */,
-				DDDDF62D134E96DD00FFA02B /* PlayerView.m */,
 				1BC671E1133A3C5C00A5C6D9 /* GameView.xib */,
 				E9AA238A1339FDC500DF98C3 /* MainWindow.xib */,
 				E9AA23901339FDC500DF98C3 /* RootViewController.xib */,
@@ -362,13 +360,12 @@
 				E9AA238F1339FDC500DF98C3 /* RootViewController.m in Sources */,
 				1BC671E2133A3C5C00A5C6D9 /* GameViewController.m in Sources */,
 				DDC0D66A134343CE0075D5D3 /* Level.m in Sources */,
-				DDE3482913435C5400A30F7D /* PlayerView.m in Sources */,
 				DD5C21DC134364A000B81887 /* LevelView.m in Sources */,
 				DDC3009A134C7D9A00304B8F /* Player.m in Sources */,
 				1B2FE2AB134DB02E0045D08A /* LevelButton.m in Sources */,
 				1B2FE2AC134DB02E0045D08A /* MainMenuViewController.m in Sources */,
-				DDDDF62E134E96DD00FFA02B /* PlayerView.m in Sources */,
 				DDDDF631134E971E00FFA02B /* PauseMenuViewController.m in Sources */,
+				DDD81C4B134E9963001E4488 /* PlayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
