@@ -51,23 +51,25 @@
 
 #pragma mark - View lifecycle
 
+- (void)gameLoop {
+    NSLog(@"GAME LOOP!");
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    // Schedule a timer
-    timer = [NSTimer scheduledTimerWithTimeInterval:1 / 50.0
-                                             target:self
-                                           selector:@selector(tick:) 
-                                           userInfo:nil
-                                            repeats:YES];
-    UITapGestureRecognizer *jump = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jump:)];
-    jump.numberOfTouchesRequired = 1;
-    jump.delegate = self;
-    [self.view addGestureRecognizer:jump];
+    // Let the user tap for jumping and attacking
+    UITapGestureRecognizer *action = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(action:)];
+    action.numberOfTouchesRequired = 1;
+    action.delegate = self;
+    [self.view addGestureRecognizer:action];
+    
+    // Start the run loop
+    [NSThread detachNewThreadSelector:@selector(gameLoop) toTarget:self withObject:nil];
 }
 
-- (void)jump:(UITapGestureRecognizer *)from {
+- (void)action:(UITapGestureRecognizer *)from {
     CGPoint touchedAt = [from locationOfTouch:0 inView:self.view];
     if (touchedAt.x > self.view.bounds.size.width / 2)
         [player jump];
@@ -78,10 +80,10 @@
 /**
  * The clock said "TICK!"
  */
-- (void)tick:(NSTimer *)sender {
+- (void)tick:(NSTimeInterval)timeInterval {
     // First, update and move shit
-    [level update:sender];
-    [player move:sender];
+    [level update:timeInterval];
+    [player move:timeInterval];
     
     // Accumulate all vertical movement to determine whether - and how far - we were bumped
     double distance = 0.0;
@@ -102,7 +104,7 @@
         }
     }
     if (distance > 0.0)
-        [player bumpDistance:distance withTimer:sender];
+        [player bumpDistance:distance withTimeInterval:timeInterval];
     else
         [player flew];
 }
@@ -116,7 +118,6 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    NSLog(@"ROOOTTAAATE");
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft);
 }

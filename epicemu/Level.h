@@ -25,7 +25,7 @@
 
 - (id)initWithLevelView:(LevelView *)levelView;
 
-- (void)update:(NSTimer *)timer;
+- (void)update:(NSTimeInterval)timeInterval;
 - (void)setNumberOfControlPoints:(unsigned int)n;
 - (unsigned int)getNextY;
 

@@ -23,7 +23,7 @@
     return self;
 }
 
-- (void)update:(NSTimer *)timer {
+- (void)update:(NSTimeInterval)timeInterval {
     
     // Remove excessive previous points
     while ([controlPoints count] >= numberOfControlPoints)

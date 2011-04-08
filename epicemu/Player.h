@@ -29,8 +29,8 @@
 @property(nonatomic) int state;
 
 - (id)initWithPlayerView:(PlayerView *)playerView;
-- (void)move:(NSTimer *)sender;
-- (void)bumpDistance:(float)distance withTimer:(NSTimer *)timer;
+- (void)move:(NSTimeInterval)timeInterval;
+- (void)bumpDistance:(float)distance withTimeInterval:(NSTimeInterval)timeInterval;
 - (void)flew;
 
 - (BOOL)isOnGround;

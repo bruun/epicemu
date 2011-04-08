@@ -8,11 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "GameViewController.h"
-#import "RootViewController.h"
-#import "MenuViewController.h"
-
-@class RootViewController, GameViewController, MenuViewController;
+@class RootViewController;
 
 @interface epicemuAppDelegate : NSObject <UIApplicationDelegate> {
 

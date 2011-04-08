@@ -35,9 +35,9 @@
 @property(nonatomic, retain) Player *player;
 @property(nonatomic, retain) PlayerView *playerView;
 
-- (void)tick;
-- (void)jump:(UIGestureRecognizer *)gesture;
+- (void)tick:(NSTimeInterval)timeInterval;
+- (void)action:(UIGestureRecognizer *)gesture;
 
-- (int)currentTime;
+- (void)gameLoop;
 
 @end

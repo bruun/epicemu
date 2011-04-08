@@ -12,8 +12,9 @@
     UIViewController *currentController;
 }
 
-- (void) switchToGameViewWithLevel:(int)level;
-- (void) switchToPauseMenuWithLevel:(int)level;
 @property(nonatomic, retain) UIViewController *currentController;
+
+- (void) switchToGameViewWithLevel:(int)level;
+- (void) switchToPauseMenuViewWithLevel:(int)level;
 
 @end

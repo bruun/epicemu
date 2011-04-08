@@ -30,17 +30,17 @@ const double G = 9.81 * 100;
     return self;
 }
 
-- (void)move:(NSTimer *)sender {
+- (void)move:(NSTimeInterval)timeInterval {
     CGPoint p = [playerView center];
-    float s = [sender timeInterval] * velocity;
+    float s = timeInterval * velocity;
     [self.playerView setCenter:CGPointMake(p.x, p.y + s)];
     
-    double t = [sender timeInterval];
+    double t = timeInterval;
     velocity += 0.5 * G * t;
     
     // Check if done attacking
     if (isAttacking) {
-        timeSpentAttacking += [sender timeInterval];
+        timeSpentAttacking += timeInterval;
         
         if (timeSpentAttacking > _lengthOfAttacks)
             [self endAttack];
@@ -55,8 +55,8 @@ const double G = 9.81 * 100;
     lowPassVelocity /= 2;
 }
 
-- (void)bumpDistance:(float)distance withTimer:(NSTimer *)timer {
-    lowPassVelocity = (2 * lowPassVelocity - distance / [timer timeInterval]) / 3;
+- (void)bumpDistance:(float)distance withTimeInterval:(NSTimeInterval)timeInterval {
+    lowPassVelocity = (2 * lowPassVelocity - distance / timeInterval) / 3;
     if (followGround)
         velocity = 50.0;
     else
