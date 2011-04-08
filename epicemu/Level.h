@@ -22,10 +22,13 @@
     
     // Settings holds level settings
     NSMutableDictionary *settings;
+    
+    int levelNumber;
 }
 
 @property(nonatomic, retain) LevelView *levelView;
 @property(nonatomic, retain) NSMutableDictionary *settings;
+@property(nonatomic) int levelNumber;
 
 - (id)initLevel:(int)levelNumber withLevelView:(LevelView *)levelView;
 

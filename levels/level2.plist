@@ -25,7 +25,7 @@
 	<key>ScoreMultiplier</key>
 	<integer>1</integer>
 	<key>ScoreToBeat</key>
-	<integer>100</integer>
+	<integer>500</integer>
 	<key>Stickyness</key>
 	<integer>1</integer>
 </dict>

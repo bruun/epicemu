@@ -11,6 +11,7 @@
 #define kFPS    25
 
 @implementation GameViewController
+@synthesize unlockLabel;
 
 @synthesize level, levelView, player, playerView, pauseMenu, scoreLabel;
 
@@ -43,6 +44,7 @@
 - (void)dealloc
 {
     [scoreLabel release];
+    [unlockLabel release];
     [super dealloc];
 }
 
@@ -148,18 +150,18 @@
     
     // Update score
     [scoreLabel performSelectorOnMainThread:@selector(setText : ) withObject:[NSString stringWithFormat:@"%d", player.score]waitUntilDone:YES];
-
-
-
-
     
-
+    if (player.score > [[level.settings valueForKey:@"ScoreToBeat"] intValue]) {
+        [[NSUserDefaults standardUserDefaults] setInteger:level.levelNumber+1 forKey:@"unlockedUpToLevel"];
+        [scoreLabel performSelectorOnMainThread:@selector(setHidden : ) withObject:false waitUntilDone:YES];
+    }
 }
 
 - (void)viewDidUnload
 {
     [scoreLabel release];
     scoreLabel = nil;
+    [self setUnlockLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

@@ -25,6 +25,7 @@
     IBOutlet PlayerView *playerView;
     Player *player;
     IBOutlet UILabel *scoreLabel;
+    UILabel *unlockLabel;
     
     float nextTick;
     BOOL _running;
@@ -39,6 +40,7 @@
 @property(nonatomic, retain) Player *player;
 @property(nonatomic, retain) PlayerView *playerView;
 @property(nonatomic, retain) IBOutlet UILabel *scoreLabel;
+@property (nonatomic, retain) IBOutlet UILabel *unlockLabel;
 
 - (id)initLevel:(int)levelNumber;
 - (void)tick:(NSTimeInterval)timeInterval;

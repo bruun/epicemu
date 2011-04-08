@@ -15,6 +15,8 @@
 		1BC671E3133A3C5C00A5C6D9 /* GameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BC671E1133A3C5C00A5C6D9 /* GameView.xib */; };
 		1BC671E5133A3F0C00A5C6D9 /* epicemu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC671E4133A3F0C00A5C6D9 /* epicemu_icon.png */; };
 		1BC671EC133A40FE00A5C6D9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC671EB133A40FE00A5C6D9 /* Default@2x.png */; };
+		1BE36FA5134F5C1C00B5CFF0 /* level2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BE36FA3134F5C1C00B5CFF0 /* level2.plist */; };
+		1BE36FA6134F5C1C00B5CFF0 /* level3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BE36FA4134F5C1C00B5CFF0 /* level3.plist */; };
 		DD5C21DC134364A000B81887 /* LevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5C21DB134364A000B81887 /* LevelView.m */; };
 		DDC0D66A134343CE0075D5D3 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC0D669134343CE0075D5D3 /* Level.m */; };
 		DDC3009A134C7D9A00304B8F /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC30099134C7D9A00304B8F /* Player.m */; };
@@ -60,6 +62,8 @@
 		1BC671E1133A3C5C00A5C6D9 /* GameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameView.xib; sourceTree = "<group>"; };
 		1BC671E4133A3F0C00A5C6D9 /* epicemu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epicemu_icon.png; sourceTree = "<group>"; };
 		1BC671EB133A40FE00A5C6D9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		1BE36FA3134F5C1C00B5CFF0 /* level2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = level2.plist; path = levels/level2.plist; sourceTree = "<group>"; };
+		1BE36FA4134F5C1C00B5CFF0 /* level3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = level3.plist; path = levels/level3.plist; sourceTree = "<group>"; };
 		DD5C21D91343648700B81887 /* LevelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelView.h; sourceTree = "<group>"; };
 		DD5C21DB134364A000B81887 /* LevelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelView.m; sourceTree = "<group>"; };
 		DDC0D668134343CE0075D5D3 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				1BBD5503134F3C3C0044D5EA /* level1.plist */,
+				1BE36FA3134F5C1C00B5CFF0 /* level2.plist */,
+				1BE36FA4134F5C1C00B5CFF0 /* level3.plist */,
 			);
 			name = levels;
 			sourceTree = "<group>";
@@ -332,6 +338,8 @@
 				1B2FE2AD134DB02E0045D08A /* MainMenuViewController.xib in Resources */,
 				DDDDF633134E972900FFA02B /* PauseMenuViewController.xib in Resources */,
 				1BBD5504134F3C3C0044D5EA /* level1.plist in Resources */,
+				1BE36FA5134F5C1C00B5CFF0 /* level2.plist in Resources */,
+				1BE36FA6134F5C1C00B5CFF0 /* level3.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

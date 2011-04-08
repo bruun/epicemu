@@ -11,13 +11,14 @@
 
 @implementation Level
 
-@synthesize levelView, settings;
+@synthesize levelView, settings, levelNumber;
 
 - (id)initLevel:(int)levelNumber withLevelView:(LevelView *)lv {
     self = [super init];
     if (self) {
         numberOfControlPoints = 50;
         controlPoints = [[NSMutableArray alloc] init];
+        self.levelNumber = levelNumber;
         self.levelView = lv;
         
         NSString *levelFile = [NSString stringWithFormat:@"level%d.plist", levelNumber];
