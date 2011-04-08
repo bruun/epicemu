@@ -33,7 +33,7 @@ const double G = 9.81 * 100;
 - (void)move:(NSTimeInterval)timeInterval {
     CGPoint p = [playerView center];
     float s = timeInterval * velocity;
-    [self.playerView setCenter:CGPointMake(p.x, p.y + s)];
+    [playerView setCenter:CGPointMake(p.x, p.y + s)];
     
     double t = timeInterval;
     velocity += 0.5 * G * t;
@@ -45,6 +45,8 @@ const double G = 9.81 * 100;
         if (timeSpentAttacking > _lengthOfAttacks)
             [self endAttack];
     }
+    
+    [playerView performSelectorOnMainThread:@selector(setNeedsDisplay) withObject:nil waitUntilDone:NO];
 }
 
 - (BOOL)isOnGround {

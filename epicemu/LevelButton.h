@@ -12,13 +12,11 @@
 @interface LevelButton : UIButton {
     int level;
     bool locked;
-    
-
 }
-
--(id) initWithValue: (int)value;
 
 @property(nonatomic) int level;
 @property(nonatomic) bool locked;
+
+-(id) initWithValue: (int)value;
 
 @end

@@ -26,7 +26,7 @@
     controlPoints = newPoints;
     
     // Call for view to update
-    [self setNeedsDisplay];
+    [self performSelectorOnMainThread:@selector(setNeedsDisplay) withObject:nil waitUntilDone:NO];
 }
 
 - (void)drawRect:(CGRect)rect

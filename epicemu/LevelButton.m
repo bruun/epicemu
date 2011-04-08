@@ -19,19 +19,11 @@
     
     if (self) {
         self.level = value;
-
+        self.enabled = unlockedUpToLevel >= value;
         
-        if (value <= unlockedUpToLevel) {
-            self.enabled = NO;
-        }
-        
-
         [self.titleLabel setFont:[UIFont fontWithName:@"Georgia" size:18]];
         [self setTitle:[NSString stringWithFormat:@"%d", value] forState:UIControlStateNormal];
         [self setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
-
-        
-        
     }
     
     return self;

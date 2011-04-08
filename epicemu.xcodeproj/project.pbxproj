@@ -138,8 +138,6 @@
 		1BEF3563133A084C003722E2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DDD81C49134E9963001E4488 /* PlayerView.h */,
-				DDD81C4A134E9963001E4488 /* PlayerView.m */,
 				DDDDF632134E972900FFA02B /* PauseMenuViewController.xib */,
 				1BC671E1133A3C5C00A5C6D9 /* GameView.xib */,
 				E9AA238A1339FDC500DF98C3 /* MainWindow.xib */,
@@ -149,6 +147,8 @@
 				DD5C21DB134364A000B81887 /* LevelView.m */,
 				1B2FE2A6134DB02E0045D08A /* LevelButton.h */,
 				1B2FE2A7134DB02E0045D08A /* LevelButton.m */,
+				DDD81C49134E9963001E4488 /* PlayerView.h */,
+				DDD81C4A134E9963001E4488 /* PlayerView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";

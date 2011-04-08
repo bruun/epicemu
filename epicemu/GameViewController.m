@@ -8,6 +8,8 @@
 
 #import "GameViewController.h"
 
+#define kFPS    25
+
 @implementation GameViewController
 
 @synthesize level, levelView, player, playerView, pauseMenu;
@@ -23,6 +25,7 @@
 
 - (id)init {
     self = [super initWithNibName:@"GameView" bundle:nil];
+    
     if (self) {
         // Maek fix level
         levelView = [[LevelView alloc] initWithFrame:self.view.bounds];
@@ -51,8 +54,40 @@
 
 #pragma mark - View lifecycle
 
+- (NSTimeInterval)currentTime {
+    return [[NSDate date] timeIntervalSince1970];
+}
+
 - (void)gameLoop {
-    NSLog(@"GAME LOOP!");
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    
+    NSTimeInterval time, lastTime = [self currentTime];
+    NSTimeInterval timeInterval;
+    
+    int fps = 15;
+    
+    while (_running) {
+        while (CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0.002, YES) == kCFRunLoopRunHandledSource);
+        
+        // Calculate how long we need to wait for
+        time = [self currentTime];
+        timeInterval = time - lastTime;
+        
+        if (timeInterval < 1.0 / fps) {
+            [NSThread sleepForTimeInterval:(1.0 / fps - timeInterval)];
+        }
+        else {
+            // UIBezierPath is not meant for real-time drawing, that's for sure.
+            NSLog(@"Oh, no, we're running behind!");
+        }
+        
+        // Perform tick
+        [self tick:timeInterval];
+        
+        lastTime = time;
+    }
+    
+    [pool release];
 }
 
 - (void)viewDidLoad
@@ -66,6 +101,7 @@
     [self.view addGestureRecognizer:action];
     
     // Start the run loop
+    _running = YES;
     [NSThread detachNewThreadSelector:@selector(gameLoop) toTarget:self withObject:nil];
 }
 

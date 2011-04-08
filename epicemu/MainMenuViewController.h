@@ -23,7 +23,7 @@ typedef enum {
 }
 
 
-- (IBAction)loadLevel:(id)sender;
+- (IBAction) loadLevel:(id)sender;
 - (IBAction)touchDown:(id)sender;
 
 - (void) hideViews;

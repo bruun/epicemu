@@ -44,7 +44,7 @@
 - (void)setState:(int)s {
     _state = s;
     
-    [self setNeedsDisplay];
+    [self performSelectorOnMainThread:@selector(setNeedsDisplay) withObject:nil waitUntilDone:NO];
 }
 
 - (void)dealloc

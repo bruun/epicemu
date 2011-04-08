@@ -11,6 +11,8 @@
 #import "GameViewController.h"
 #import "PauseMenuViewController.h"
 
+#define kTestingGameView    YES
+
 @implementation RootViewController
 @synthesize currentController;
 
@@ -33,13 +35,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"Hai!");
     
-    self.currentController = [[MainMenuViewController alloc] init];
-    [self.view addSubview:self.currentController.view];
-
-    [self.view bringSubviewToFront:self.currentController.view];
-
+    if (kTestingGameView)
+        self.currentController = [[GameViewController alloc] init];
+    else
+        self.currentController = [[MainMenuViewController alloc] init];
+    
+    self.view = self.currentController.view;
+    
+    [self.currentController release];
 }
 
 - (void)viewDidUnload
@@ -65,7 +69,6 @@
     self.currentController = [[GameViewController alloc] init];
 
     [self.view addSubview:self.currentController.view];
-    
     
 }
 

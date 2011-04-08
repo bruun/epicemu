@@ -110,7 +110,7 @@
         
         // Make tha button, give it a position, and add it
         LevelButton *button = [[LevelButton alloc] initWithValue:i];
-        [button addTarget:self action:@selector(loadLevel) forControlEvents:UIControlEventAllEvents];
+        [button addTarget:self action:@selector(loadLevel:) forControlEvents:UIControlEventTouchUpInside];
         [button setFrame:CGRectMake(x, y, kLevelButtonWidth, kLevelButtonHeight)];
         [self.view addSubview:button];
         
@@ -124,8 +124,9 @@
     }
 }
 
-- (void) loadLevel:(id)sender
+- (IBAction) loadLevel:(id)sender
 {
+    NSLog(@"Starting level...");
     LevelButton *button = (LevelButton*)sender;
     [(RootViewController *)[self parentViewController] switchToGameViewWithLevel:button.level];
 }
