@@ -147,7 +147,13 @@
         [player flew];
     
     // Update score
-    scoreLabel.text = [NSString stringWithFormat:@"%d", player.score];
+    [scoreLabel performSelectorOnMainThread:@selector(setText : ) withObject:[NSString stringWithFormat:@"%d", player.score]waitUntilDone:YES];
+
+
+
+
+    
+
 }
 
 - (void)viewDidUnload

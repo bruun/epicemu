@@ -24,7 +24,7 @@
     
     IBOutlet PlayerView *playerView;
     Player *player;
-    UILabel *scoreLabel;
+    IBOutlet UILabel *scoreLabel;
     
     float nextTick;
     BOOL _running;
