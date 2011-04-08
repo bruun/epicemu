@@ -15,8 +15,8 @@
 -(id) initWithValue:(int) value
 {
     self = [super init];
-    int unlockedUpToLevel = [[NSUserDefaults standardUserDefaults] boolForKey:@"unlockedUpToLevel"];
-    
+    int unlockedUpToLevel = [[NSUserDefaults standardUserDefaults] integerForKey:@"unlockedUpToLevel"];
+    NSLog(@"Unlocked up to level: %d", unlockedUpToLevel);
     if (self) {
         self.level = value;
         self.enabled = unlockedUpToLevel >= value;
