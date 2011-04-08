@@ -7,8 +7,12 @@
 //
 
 #import "RootViewController.h"
+#import "MainMenuViewController.h"
+#import "GameViewController.h"
+#import "PauseMenuViewController.h"
 
 @implementation RootViewController
+@synthesize currentController;
 
 - (void)dealloc
 {
@@ -29,6 +33,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"Hai!");
+    
+    self.currentController = [[MainMenuViewController alloc] initWithRoot:self];
+    self.view = self.currentController.view;
 }
 
 - (void)viewDidUnload
@@ -41,7 +49,34 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    NSLog(@"Autorotate");
+    return [self.currentController shouldAutorotateToInterfaceOrientation:interfaceOrientation];
+}
+
+- (void) switchToGameViewWithLevel:(int)level
+{
+    self.wantsFullScreenLayout = true;
+    
+    NSLog(@"Switching to game view!");
+    [self.currentController release];
+    self.currentController = [[GameViewController alloc] init];
+
+    [self.view addSubview:self.currentController.view];
+    
+    
+}
+
+- (void) switchToPauseMenuViewWithLevel:(int)level
+{
+    self.wantsFullScreenLayout = true;
+    
+    NSLog(@"Switching to pause menu!");
+    [self.currentController release];
+    self.currentController = [[PauseMenuViewController alloc] init];
+    
+    [self.view addSubview:self.currentController.view];
+    
+    
 }
 
 @end

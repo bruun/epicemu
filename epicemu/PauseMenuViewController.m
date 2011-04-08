@@ -1,15 +1,17 @@
 //
-//  MenuViewController.m
+//  PauseMenuViewController.m
 //  epicemu
 //
-//  Created by Håkon Erichsen on 3/23/11.
+//  Created by Thomas Bruun on 4/7/11.
 //  Copyright 2011 Private. All rights reserved.
 //
 
-#import "MenuViewController.h"
+#import "PauseMenuViewController.h"
 
 
-@implementation MenuViewController
+@implementation PauseMenuViewController
+
+@synthesize resumeButton, retryButton, mainMenuButton, root;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -54,4 +56,13 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)resumeGame:(id)sender {
+    
+}
+
+- (IBAction)retryLevel:(id)sender {
+}
+
+- (IBAction)gotoMainMenu:(id)sender {
+}
 @end

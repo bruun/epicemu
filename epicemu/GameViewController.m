@@ -11,7 +11,7 @@
 @implementation GameViewController
 
 @synthesize level, levelView;
-@synthesize player, playerView;
+@synthesize player, playerView, root;
 
 /**
  * For encapsulation purposes, use -init instead.
@@ -116,6 +116,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
+    NSLog(@"ROOOTTAAATE");
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft);
 }

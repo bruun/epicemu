@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface RootViewController : UIViewController {
-    
+    UIViewController *currentController;
 }
+
+- (void) switchToGameViewWithLevel:(int)level;
+- (void) switchToPauseMenuWithLevel:(int)level;
+@property(nonatomic, retain) UIViewController *currentController;
 
 @end

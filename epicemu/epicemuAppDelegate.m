@@ -19,10 +19,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    if (true) // Debug-hook for Jonas
-        [self setViewController:[[GameViewController alloc] init]];
-    else
-        [self setViewController:[[RootViewController alloc] init]];
+    
+    // initialize defaults
+    NSString *dateKey    = @"dateKey";
+    NSDate *lastRead    = (NSDate *)[[NSUserDefaults standardUserDefaults] objectForKey:dateKey];
+    if (lastRead == nil)     // App first run: set up user defaults.
+    {
+        NSDictionary *appDefaults  = [NSDictionary dictionaryWithObjectsAndKeys:[NSDate date], dateKey, nil];
+        
+        // do any other initialization you want to do here - e.g. the starting default values.    
+        [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"unlockedUpToLevel"];
+        
+        // sync the defaults to disk
+        [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:dateKey];
     
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
