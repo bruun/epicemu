@@ -10,6 +10,13 @@
 		1B2FE2AB134DB02E0045D08A /* LevelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2FE2A7134DB02E0045D08A /* LevelButton.m */; };
 		1B2FE2AC134DB02E0045D08A /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2FE2A9134DB02E0045D08A /* MainMenuViewController.m */; };
 		1B2FE2AD134DB02E0045D08A /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B2FE2AA134DB02E0045D08A /* MainMenuViewController.xib */; };
+		1B349D1B134FBC33008C0009 /* level4.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B349D14134FBC33008C0009 /* level4.plist */; };
+		1B349D1C134FBC33008C0009 /* level5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B349D15134FBC33008C0009 /* level5.plist */; };
+		1B349D1D134FBC33008C0009 /* level6.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B349D16134FBC33008C0009 /* level6.plist */; };
+		1B349D1E134FBC33008C0009 /* level7.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B349D17134FBC33008C0009 /* level7.plist */; };
+		1B349D1F134FBC33008C0009 /* level8.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B349D18134FBC33008C0009 /* level8.plist */; };
+		1B349D20134FBC33008C0009 /* level9.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B349D19134FBC33008C0009 /* level9.plist */; };
+		1B349D21134FBC33008C0009 /* level10.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B349D1A134FBC33008C0009 /* level10.plist */; };
 		1BBD5504134F3C3C0044D5EA /* level1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BBD5503134F3C3C0044D5EA /* level1.plist */; };
 		1BC671E2133A3C5C00A5C6D9 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC671E0133A3C5C00A5C6D9 /* GameViewController.m */; };
 		1BC671E3133A3C5C00A5C6D9 /* GameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BC671E1133A3C5C00A5C6D9 /* GameView.xib */; };
@@ -54,6 +61,13 @@
 		1B2FE2A8134DB02E0045D08A /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		1B2FE2A9134DB02E0045D08A /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		1B2FE2AA134DB02E0045D08A /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
+		1B349D14134FBC33008C0009 /* level4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = level4.plist; path = levels/level4.plist; sourceTree = "<group>"; };
+		1B349D15134FBC33008C0009 /* level5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = level5.plist; path = levels/level5.plist; sourceTree = "<group>"; };
+		1B349D16134FBC33008C0009 /* level6.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = level6.plist; path = levels/level6.plist; sourceTree = "<group>"; };
+		1B349D17134FBC33008C0009 /* level7.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = level7.plist; path = levels/level7.plist; sourceTree = "<group>"; };
+		1B349D18134FBC33008C0009 /* level8.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = level8.plist; path = levels/level8.plist; sourceTree = "<group>"; };
+		1B349D19134FBC33008C0009 /* level9.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = level9.plist; path = levels/level9.plist; sourceTree = "<group>"; };
+		1B349D1A134FBC33008C0009 /* level10.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = level10.plist; path = levels/level10.plist; sourceTree = "<group>"; };
 		1BBD5503134F3C3C0044D5EA /* level1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = level1.plist; path = levels/level1.plist; sourceTree = "<group>"; };
 		1BC671DF133A3C5B00A5C6D9 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		1BC671E0133A3C5C00A5C6D9 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
@@ -122,6 +136,13 @@
 				1BBD5503134F3C3C0044D5EA /* level1.plist */,
 				1BE36FA3134F5C1C00B5CFF0 /* level2.plist */,
 				1BE36FA4134F5C1C00B5CFF0 /* level3.plist */,
+				1B349D14134FBC33008C0009 /* level4.plist */,
+				1B349D15134FBC33008C0009 /* level5.plist */,
+				1B349D16134FBC33008C0009 /* level6.plist */,
+				1B349D17134FBC33008C0009 /* level7.plist */,
+				1B349D18134FBC33008C0009 /* level8.plist */,
+				1B349D19134FBC33008C0009 /* level9.plist */,
+				1B349D1A134FBC33008C0009 /* level10.plist */,
 			);
 			name = levels;
 			sourceTree = "<group>";
@@ -331,6 +352,13 @@
 				1BBD5504134F3C3C0044D5EA /* level1.plist in Resources */,
 				1BE36FA5134F5C1C00B5CFF0 /* level2.plist in Resources */,
 				1BE36FA6134F5C1C00B5CFF0 /* level3.plist in Resources */,
+				1B349D1B134FBC33008C0009 /* level4.plist in Resources */,
+				1B349D1C134FBC33008C0009 /* level5.plist in Resources */,
+				1B349D1D134FBC33008C0009 /* level6.plist in Resources */,
+				1B349D1E134FBC33008C0009 /* level7.plist in Resources */,
+				1B349D1F134FBC33008C0009 /* level8.plist in Resources */,
+				1B349D20134FBC33008C0009 /* level9.plist in Resources */,
+				1B349D21134FBC33008C0009 /* level10.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
