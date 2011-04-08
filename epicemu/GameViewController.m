@@ -13,7 +13,7 @@
 @implementation GameViewController
 @synthesize unlockLabel;
 
-@synthesize level, levelView, player, playerView, pauseMenu, scoreLabel;
+@synthesize level, levelView, player, playerView, pauseMenu, scoreLabel, mainMenuButton, retryButton, resumeButton;
 
 /**
  * For encapsulation purposes, use -init instead.
@@ -35,9 +35,16 @@
         
         // Make a player
         player = [[Player alloc] initWithPlayerView:playerView];
+        
         [self.view addSubview:scoreLabel];
         
-        pauseMenu = [[PauseMenuViewController alloc] init];
+        [self.view addSubview:resumeButton];
+        [self.view addSubview:retryButton];
+        [self.view addSubview:mainMenuButton];
+        
+        [resumeButton setHidden:YES];
+        [retryButton setHidden:YES];        
+        [mainMenuButton setHidden:YES];    
     }
 
     return self;
@@ -117,19 +124,50 @@
 }
 
 - (void)action:(UITapGestureRecognizer *)from {
-
-    CGPoint touchedAt = [from locationOfTouch:0 inView:self.view];
-    if (touchedAt.x > self.view.bounds.size.width / 2)
-        [player jump];
-    else
-        [player attack];
+        if (_running) {
+            CGPoint touchedAt = [from locationOfTouch:0 inView:self.view];
+            if (touchedAt.x > self.view.bounds.size.width / 2)
+                [player jump];
+            else
+                [player attack];
+    }
 }
 
+// Handle pausing and resuming
 
 - (void)pauseGame:(UITapGestureRecognizer *)taps {
     NSLog(@"Registered doubletap event");
     _running = NO;
-    [self.view addSubview:pauseMenu.view];
+    
+    [resumeButton setHidden:NO];
+    [retryButton setHidden:NO];
+    [mainMenuButton setHidden:NO];
+
+
+}
+
+- (IBAction)resumeGame:(id)sender {
+    NSLog(@"Resume game!");
+    [self hideMenuButtons];
+    _running = YES;
+    [self gameLoop];
+    
+}
+
+- (IBAction)retryLevel:(id)sender {
+    NSLog(@"Retry level!");
+    [self hideMenuButtons];
+}
+
+- (IBAction)gotoMainMenu:(id)sender {
+    NSLog(@"Going to main menu");
+    [self hideMenuButtons];
+}
+
+- (void)hideMenuButtons {
+    [resumeButton setHidden:YES];
+    [retryButton setHidden:YES];
+    [mainMenuButton setHidden:YES];
 }
 
 /**
@@ -172,8 +210,7 @@
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:level.levelNumber+1]
                                                   forKey:@"unlockedUpToLevel"];
         [scoreLabel performSelectorOnMainThread:@selector(setHidden : ) withObject:false waitUntilDone:YES];
-        NSLog(@"Just unlocked level %d", level.levelNumber+1);
-        NSLog(@"Registered unlocked up to:%d", [[NSUserDefaults standardUserDefaults] integerForKey:@"unlockedUpToLevel"]);
+        
     }
 }
 

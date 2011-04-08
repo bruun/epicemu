@@ -9,7 +9,7 @@
 #import "RootViewController.h"
 #import "MainMenuViewController.h"
 #import "GameViewController.h"
-#import "PauseMenuViewController.h"
+
 
 // The following switch autoloads GameViewController directly
 #define kTestingGameView    NO
@@ -72,18 +72,4 @@
     [self.view addSubview:self.currentController.view];
     
 }
-
-- (void) switchToPauseMenuViewWithLevel:(int)level
-{
-    self.wantsFullScreenLayout = true;
-    
-    NSLog(@"Switching to pause menu!");
-    [self.currentController release];
-    self.currentController = [[PauseMenuViewController alloc] init];
-    
-    [self.view addSubview:self.currentController.view];
-    
-    
-}
-
 @end
