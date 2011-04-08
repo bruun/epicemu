@@ -13,6 +13,7 @@
 
 @synthesize resumeButton, retryButton, mainMenuButton;
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -40,7 +41,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    // Set opacity so that the level is still visible in the background
+    self.view.backgroundColor = [UIColor clearColor];
+
 }
 
 - (void)viewDidUnload
@@ -57,7 +61,10 @@
 }
 
 - (IBAction)resumeGame:(id)sender {
-    
+    // Remove the view and continue gameplay
+
+    [self.view removeFromSuperview];
+
 }
 
 - (IBAction)retryLevel:(id)sender {

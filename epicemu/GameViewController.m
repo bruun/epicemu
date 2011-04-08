@@ -36,6 +36,8 @@
         // Make a player
         player = [[Player alloc] initWithPlayerView:playerView];
         [self.view addSubview:scoreLabel];
+        
+        pauseMenu = [[PauseMenuViewController alloc] init];
     }
 
     return self;
@@ -104,17 +106,30 @@
     action.delegate = self;
     [self.view addGestureRecognizer:action];
     
+    UITapGestureRecognizer *pause = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pauseGame:)];
+    pause.numberOfTouchesRequired = 2;
+    pause.delegate = self;
+    [self.view addGestureRecognizer:pause];
+    
     // Start the run loop
     _running = YES;
     [NSThread detachNewThreadSelector:@selector(gameLoop) toTarget:self withObject:nil];
 }
 
 - (void)action:(UITapGestureRecognizer *)from {
+
     CGPoint touchedAt = [from locationOfTouch:0 inView:self.view];
     if (touchedAt.x > self.view.bounds.size.width / 2)
         [player jump];
     else
         [player attack];
+}
+
+
+- (void)pauseGame:(UITapGestureRecognizer *)taps {
+    NSLog(@"Registered doubletap event");
+    _running = NO;
+    [self.view addSubview:pauseMenu.view];
 }
 
 /**
@@ -167,6 +182,7 @@
     [scoreLabel release];
     scoreLabel = nil;
     [self setUnlockLabel:nil];
+    [pauseMenu release];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
