@@ -17,7 +17,8 @@
 		1BC671EC133A40FE00A5C6D9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC671EB133A40FE00A5C6D9 /* Default@2x.png */; };
 		DD5C21DC134364A000B81887 /* LevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5C21DB134364A000B81887 /* LevelView.m */; };
 		DDC0D66A134343CE0075D5D3 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC0D669134343CE0075D5D3 /* Level.m */; };
-		DDE3482913435C5400A30F7D /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE3482813435C5400A30F7D /* Player.m */; };
+		DDC3009A134C7D9A00304B8F /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC30099134C7D9A00304B8F /* Player.m */; };
+		DDE3482913435C5400A30F7D /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE3482813435C5400A30F7D /* PlayerView.m */; };
 		E9AA23791339FDC400DF98C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AA23781339FDC400DF98C3 /* UIKit.framework */; };
 		E9AA237B1339FDC400DF98C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AA237A1339FDC400DF98C3 /* Foundation.framework */; };
 		E9AA237D1339FDC400DF98C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AA237C1339FDC400DF98C3 /* CoreGraphics.framework */; };
@@ -62,8 +63,10 @@
 		DD5C21DB134364A000B81887 /* LevelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelView.m; sourceTree = "<group>"; };
 		DDC0D668134343CE0075D5D3 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		DDC0D669134343CE0075D5D3 /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
-		DDE3482713435C5400A30F7D /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
-		DDE3482813435C5400A30F7D /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		DDC30098134C7D9A00304B8F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		DDC30099134C7D9A00304B8F /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		DDE3482713435C5400A30F7D /* PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerView.h; sourceTree = "<group>"; };
+		DDE3482813435C5400A30F7D /* PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerView.m; sourceTree = "<group>"; };
 		E9AA23741339FDC400DF98C3 /* epicemu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = epicemu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9AA23781339FDC400DF98C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E9AA237A1339FDC400DF98C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -124,8 +127,8 @@
 			children = (
 				DDC0D668134343CE0075D5D3 /* Level.h */,
 				DDC0D669134343CE0075D5D3 /* Level.m */,
-				DDE3482713435C5400A30F7D /* Player.h */,
-				DDE3482813435C5400A30F7D /* Player.m */,
+				DDC30098134C7D9A00304B8F /* Player.h */,
+				DDC30099134C7D9A00304B8F /* Player.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -351,8 +354,9 @@
 				E9AA238F1339FDC500DF98C3 /* RootViewController.m in Sources */,
 				1BC671E2133A3C5C00A5C6D9 /* GameViewController.m in Sources */,
 				DDC0D66A134343CE0075D5D3 /* Level.m in Sources */,
-				DDE3482913435C5400A30F7D /* Player.m in Sources */,
+				DDE3482913435C5400A30F7D /* PlayerView.m in Sources */,
 				DD5C21DC134364A000B81887 /* LevelView.m in Sources */,
+				DDC3009A134C7D9A00304B8F /* Player.m in Sources */,
 				1B2FE2AB134DB02E0045D08A /* LevelButton.m in Sources */,
 				1B2FE2AC134DB02E0045D08A /* MainMenuViewController.m in Sources */,
 				1B2FE2B0134DB9A40045D08A /* PlayerView.m in Sources */,

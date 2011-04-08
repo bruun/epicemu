@@ -12,6 +12,9 @@
 #import "Player.h"
 #import "PauseMenuViewController.h"
 
+#define FPS         25
+#define SKIP_TICKS  1000 / FPS
+
 @interface GameViewController : UIViewController <UIGestureRecognizerDelegate> {
     
     
@@ -22,7 +25,8 @@
     IBOutlet PlayerView *playerView;
     Player *player;
     
-    NSTimer *timer;
+    float nextTick;
+    BOOL _running;
 }
 
 @property(retain,nonatomic) PauseMenuViewController *pauseMenu;
@@ -32,8 +36,9 @@
 @property(nonatomic, retain) Player *player;
 @property(nonatomic, retain) PlayerView *playerView;
 
-- (void)tick:(NSTimer *)sender;
+- (void)tick;
 - (void)jump:(UIGestureRecognizer *)gesture;
+- (int)currentTime;
 
 
 @end

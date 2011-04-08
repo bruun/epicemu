@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class RootViewController;
+#import "GameViewController.h"
+#import "RootViewController.h"
+#import "MenuViewController.h"
+
+@class RootViewController, GameViewController, MenuViewController;
 
 @interface epicemuAppDelegate : NSObject <UIApplicationDelegate> {
 
@@ -16,6 +20,6 @@
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
-@property (nonatomic, retain) IBOutlet RootViewController *viewController;
+@property (nonatomic, retain) IBOutlet UIViewController *viewController;
 
 @end
